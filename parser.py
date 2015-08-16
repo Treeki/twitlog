@@ -58,7 +58,7 @@ class LogParser:
 		else:
 			print('username change detected: %s -> %s' % (self.user_cache[uid], name))
 			self.user_cache[uid] = name
-			c = self.db.execute('update users set %s = %s + 1, screen_name = ? where user_id = ?' % (field, field), (uid, name))
+			c = self.db.execute('update users set %s = %s + 1, screen_name = ? where user_id = ?' % (field, field), (name, uid))
 		c.close()
 
 
